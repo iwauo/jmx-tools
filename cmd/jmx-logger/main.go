@@ -1,8 +1,16 @@
 package main
 
-import "fmt"
-import "github.com/iwauo/jmx-tools/jmxclient"
+import (
+	"log"
+
+	"github.com/iwauo/jmx-tools/jmxclient"
+)
 
 func main() {
-	fmt.Println(jmxclient.Config())
+	log.Println("Running...")
+	result, err := jmxclient.Start()
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Println(result)
 }
