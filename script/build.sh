@@ -12,6 +12,5 @@ set -x
 
 (cd $BASE_DIR \
   && go test "$GO_MODULE_PKG/jmxclient" \
-  && go get "$GO_MODULE_PKG/cmd/$COMMAND_NAME" \
-  && $COMMAND_NAME -f ./jmxclient/config.yml
+  && go get "$GO_MODULE_PKG/cmd/$COMMAND_NAME"
 )

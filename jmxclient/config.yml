@@ -1,0 +1,19 @@
+endpoint: http://localhost:8080/manager/jmxproxy
+
+credential:
+  user: tomcat
+  pass: tomcat
+
+output:
+  interval: 5
+  rows: 5
+  useCRLF: true
+
+columns:
+- name: maxThreads
+  type: Catalina:type=ThreadPool,name="http-apr-8080"
+  attribute: maxThreads
+
+- name: activeSessions
+  type: Catalina:type=Manager,context=/,host=localhost
+  attribute: activeSessions
